@@ -14,10 +14,10 @@ fi
 
 This tests for availability of the script and executes it.
 
-# Usage:
+# Usage:<br>
 
-h <option>, where option is:
-    m my personal persistant history (current tty)
-    p sorted persistent history
+h [option], where option is:<br><br>
+m persistent history for current tty<br>
+p sorted persistent history
 
 If no option is given, the standard Bash history will be shown.
