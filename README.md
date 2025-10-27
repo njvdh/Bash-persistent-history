@@ -1,6 +1,6 @@
 # Bash-persistent-history
 
-Bourne Again Shell persistent history and setting aliases
+Bourne Again SHell persistent history and setting aliases
 
 This tiny script prepends date, time, IP-address, tty and exit status for each command.
 
