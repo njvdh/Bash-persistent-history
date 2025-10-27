@@ -1,4 +1,4 @@
-# === BASH PERSISTENT HISTORY (BPH) V3.0 ===
+# === BASH PERSISTENT HISTORY (V3.1: Met Zoekfunctie) ===
 #
 # GitHub: [INSERT YOUR GITHUB LINK HERE]
 #
@@ -21,7 +21,7 @@ readonly MAX_CMD_LENGTH=2048
 # Set the time format for the standard Bash history (essential for persistent_history)
 HISTTIMEFORMAT='%F %T '
 
-# Function to view the persistent history
+# Functie om de persistente geschiedenis te bekijken
 h ()
 {
     # Check if the log file exists
@@ -36,12 +36,21 @@ h ()
             history
             ;;
         m)
-            # Show history only for the current TTY.
+            # Toon geschiedenis alleen voor de huidige TTY.
             TTY=`tty|sed -e "s/\/dev\///"`; cat "$PH_COMMAND_LOG" | grep "$PH_SEPARATOR$TTY$PH_SEPARATOR"
             ;;
         p)
-            # Show the full persistent history
+            # Toon de volledige persistente geschiedenis
             cat "$PH_COMMAND_LOG"
+            ;;
+        s)
+            if [ -z "$2" ]; then
+                echo "Fout: Geef een zoekterm op voor de zoekfunctie (h s <term>)."
+                return 1
+            fi
+            # Zoek hoofdletterongevoelig (grep -i) in het volledige logbestand
+            echo "--- Resultaten voor '$2' in $PH_COMMAND_LOG: ---"
+            grep -i "$2" "$PH_COMMAND_LOG"
             ;;
         *)
             cat <<_EOF
@@ -49,6 +58,7 @@ Usage: h <option>, where option is:
 <none>   standard Bash history
 m        my personal persistent history (current TTY)
 p        full persistent history
+s <term> search the full persistent history (case-insensitive)
 _EOF
             ;;
     esac
