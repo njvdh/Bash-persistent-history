@@ -3,7 +3,9 @@
 Bourne Again Shell persistent history and setting aliases
 
 This tiny script prepends date, time, IP-address, tty and exit status for each command.
+
 When working simultaneously with another user, you can filter on current tty (option m).
+
 The resulting history will be written in plain text to $HOME/.persistent_history
 
 # Installation:<br>
