@@ -2,7 +2,7 @@
 
 ## 📄 Introduction
 
-**Bash Persistent History (BPH)** is an enhanced Bash script designed to replace and enrich the standard command-line history with essential metadata for auditing and analysis. Unlike the default `.bash_history`, BPH logs every command immediately after execution, including a wealth of contextual information.
+**Bash Persistent History (BPH)** is an enhanced Bash script designed to enrich the standard command-line history with essential metadata for auditing and analysis. Unlike the default `.bash_history`, BPH logs every command immediately after execution, including a wealth of contextual information.
 
 The history is stored in a compact, dedicated hidden directory (`$HOME/.phist/`), which improves manageability and prevents cluttering the `$HOME` directory.
 
