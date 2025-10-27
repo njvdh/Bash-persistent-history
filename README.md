@@ -2,7 +2,7 @@
 
 ## 📄 Introduction
 
-**Bash Persistent History (BPH)** is an enhanced Bash script designed to enrich the standard command-line history with essential metadata for auditing and analysis. Unlike the default `.bash_history`, BPH logs every command immediately after execution, including a wealth of contextual information.
+**Bash Persistent History (BPH)** is an enhanced Bash script designed to replace and enrich the standard command-line history with essential metadata for auditing and analysis. Unlike the default `.bash_history`, BPH logs every command immediately after execution, including a wealth of contextual information.
 
 The history is stored in a compact, dedicated hidden directory (`$HOME/.phist/`), which improves manageability and prevents cluttering the `$HOME` directory.
 
@@ -12,7 +12,7 @@ The history is stored in a compact, dedicated hidden directory (`$HOME/.phist/`)
 * **Structured Logging:** The log is **TAB-separated** (`\t`), making it easy and reliable to parse with tools like `awk` and `cut`.
 * **Data-Dump Prevention:** Overly long commands (which are often pasted data dumps or scripts) are detected, truncated, and logged with a **length notification** to preserve log file readability.
 * **Dedicated Directory:** All history files are stored under `$HOME/.phist/` for clean organization and easy management.
-* **Command Navigation:** The built-in function `h` offers quick access to the full history or the history of the current terminal (TTY).
+* **Advanced Navigation:** The built-in function `h` offers quick access to the full history, the current terminal's history, and a powerful **case-insensitive search** capability.
 
 ***
 
@@ -47,11 +47,12 @@ source ~/.bashrc
 
 Usage
 
-The persistent history is recorded automatically upon command execution. You can view the logs using the function h:
+The persistent history is recorded automatically upon command execution. You can view and search the logs using the function h:
 Command	Description
 h	Shows the standard Bash history.
 h p	Shows the full persistent history ($HOME/.phist/commands.log).
 h m	Shows only the persistent history for the current TTY/terminal.
+h s <term>	Searches the full history for <term> (case-insensitive).
 
 📝 Notes
 
