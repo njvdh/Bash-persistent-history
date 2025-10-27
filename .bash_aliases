@@ -1,6 +1,6 @@
 # === BASH PERSISTENT HISTORY (V3.1: Met Zoekfunctie) ===
 #
-# GitHub: [INSERT YOUR GITHUB LINK HERE]
+# GitHub: https://github.com/njvdh/Bash-persistent-history
 #
 # Stop if this is not a Bash shell
 if [ `basename $SHELL` != "bash" ]; then exit; fi
